@@ -1,0 +1,14 @@
+C:\Users\MATI\Desktop\P1\P3\Al.1\Al.1\bin\Debug\net8.0\Al.1.exe
+C:\Users\MATI\Desktop\P1\P3\Al.1\Al.1\bin\Debug\net8.0\Al.1.deps.json
+C:\Users\MATI\Desktop\P1\P3\Al.1\Al.1\bin\Debug\net8.0\Al.1.runtimeconfig.json
+C:\Users\MATI\Desktop\P1\P3\Al.1\Al.1\bin\Debug\net8.0\Al.1.dll
+C:\Users\MATI\Desktop\P1\P3\Al.1\Al.1\bin\Debug\net8.0\Al.1.pdb
+C:\Users\MATI\Desktop\P1\P3\Al.1\Al.1\obj\Debug\net8.0\Al.1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MATI\Desktop\P1\P3\Al.1\Al.1\obj\Debug\net8.0\Al.1.AssemblyInfoInputs.cache
+C:\Users\MATI\Desktop\P1\P3\Al.1\Al.1\obj\Debug\net8.0\Al.1.AssemblyInfo.cs
+C:\Users\MATI\Desktop\P1\P3\Al.1\Al.1\obj\Debug\net8.0\Al.1.csproj.CoreCompileInputs.cache
+C:\Users\MATI\Desktop\P1\P3\Al.1\Al.1\obj\Debug\net8.0\Al.1.dll
+C:\Users\MATI\Desktop\P1\P3\Al.1\Al.1\obj\Debug\net8.0\refint\Al.1.dll
+C:\Users\MATI\Desktop\P1\P3\Al.1\Al.1\obj\Debug\net8.0\Al.1.pdb
+C:\Users\MATI\Desktop\P1\P3\Al.1\Al.1\obj\Debug\net8.0\Al.1.genruntimeconfig.cache
+C:\Users\MATI\Desktop\P1\P3\Al.1\Al.1\obj\Debug\net8.0\ref\Al.1.dll
