@@ -1,0 +1,14 @@
+C:\Users\MATI\Desktop\Algorytm\ALG_cz.2\P1\P1\bin\Debug\net8.0\P1.exe
+C:\Users\MATI\Desktop\Algorytm\ALG_cz.2\P1\P1\bin\Debug\net8.0\P1.deps.json
+C:\Users\MATI\Desktop\Algorytm\ALG_cz.2\P1\P1\bin\Debug\net8.0\P1.runtimeconfig.json
+C:\Users\MATI\Desktop\Algorytm\ALG_cz.2\P1\P1\bin\Debug\net8.0\P1.dll
+C:\Users\MATI\Desktop\Algorytm\ALG_cz.2\P1\P1\bin\Debug\net8.0\P1.pdb
+C:\Users\MATI\Desktop\Algorytm\ALG_cz.2\P1\P1\obj\Debug\net8.0\P1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MATI\Desktop\Algorytm\ALG_cz.2\P1\P1\obj\Debug\net8.0\P1.AssemblyInfoInputs.cache
+C:\Users\MATI\Desktop\Algorytm\ALG_cz.2\P1\P1\obj\Debug\net8.0\P1.AssemblyInfo.cs
+C:\Users\MATI\Desktop\Algorytm\ALG_cz.2\P1\P1\obj\Debug\net8.0\P1.csproj.CoreCompileInputs.cache
+C:\Users\MATI\Desktop\Algorytm\ALG_cz.2\P1\P1\obj\Debug\net8.0\P1.dll
+C:\Users\MATI\Desktop\Algorytm\ALG_cz.2\P1\P1\obj\Debug\net8.0\refint\P1.dll
+C:\Users\MATI\Desktop\Algorytm\ALG_cz.2\P1\P1\obj\Debug\net8.0\P1.pdb
+C:\Users\MATI\Desktop\Algorytm\ALG_cz.2\P1\P1\obj\Debug\net8.0\P1.genruntimeconfig.cache
+C:\Users\MATI\Desktop\Algorytm\ALG_cz.2\P1\P1\obj\Debug\net8.0\ref\P1.dll
