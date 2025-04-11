@@ -1,0 +1,14 @@
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz2\Algorytm\Algorytm\bin\Debug\net8.0\Algorytm.exe
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz2\Algorytm\Algorytm\bin\Debug\net8.0\Algorytm.deps.json
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz2\Algorytm\Algorytm\bin\Debug\net8.0\Algorytm.runtimeconfig.json
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz2\Algorytm\Algorytm\bin\Debug\net8.0\Algorytm.dll
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz2\Algorytm\Algorytm\bin\Debug\net8.0\Algorytm.pdb
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz2\Algorytm\Algorytm\obj\Debug\net8.0\Algorytm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz2\Algorytm\Algorytm\obj\Debug\net8.0\Algorytm.AssemblyInfoInputs.cache
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz2\Algorytm\Algorytm\obj\Debug\net8.0\Algorytm.AssemblyInfo.cs
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz2\Algorytm\Algorytm\obj\Debug\net8.0\Algorytm.csproj.CoreCompileInputs.cache
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz2\Algorytm\Algorytm\obj\Debug\net8.0\Algorytm.dll
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz2\Algorytm\Algorytm\obj\Debug\net8.0\refint\Algorytm.dll
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz2\Algorytm\Algorytm\obj\Debug\net8.0\Algorytm.pdb
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz2\Algorytm\Algorytm\obj\Debug\net8.0\Algorytm.genruntimeconfig.cache
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz2\Algorytm\Algorytm\obj\Debug\net8.0\ref\Algorytm.dll
