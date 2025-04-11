@@ -1,0 +1,14 @@
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz1\Algorytm_genetyczny\Algorytm_genetyczny\bin\Debug\net8.0\Algorytm_genetyczny.exe
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz1\Algorytm_genetyczny\Algorytm_genetyczny\bin\Debug\net8.0\Algorytm_genetyczny.deps.json
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz1\Algorytm_genetyczny\Algorytm_genetyczny\bin\Debug\net8.0\Algorytm_genetyczny.runtimeconfig.json
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz1\Algorytm_genetyczny\Algorytm_genetyczny\bin\Debug\net8.0\Algorytm_genetyczny.dll
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz1\Algorytm_genetyczny\Algorytm_genetyczny\bin\Debug\net8.0\Algorytm_genetyczny.pdb
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz1\Algorytm_genetyczny\Algorytm_genetyczny\obj\Debug\net8.0\Algorytm_genetyczny.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz1\Algorytm_genetyczny\Algorytm_genetyczny\obj\Debug\net8.0\Algorytm_genetyczny.AssemblyInfoInputs.cache
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz1\Algorytm_genetyczny\Algorytm_genetyczny\obj\Debug\net8.0\Algorytm_genetyczny.AssemblyInfo.cs
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz1\Algorytm_genetyczny\Algorytm_genetyczny\obj\Debug\net8.0\Algorytm_genetyczny.csproj.CoreCompileInputs.cache
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz1\Algorytm_genetyczny\Algorytm_genetyczny\obj\Debug\net8.0\Algorytm_genetyczny.dll
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz1\Algorytm_genetyczny\Algorytm_genetyczny\obj\Debug\net8.0\refint\Algorytm_genetyczny.dll
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz1\Algorytm_genetyczny\Algorytm_genetyczny\obj\Debug\net8.0\Algorytm_genetyczny.pdb
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz1\Algorytm_genetyczny\Algorytm_genetyczny\obj\Debug\net8.0\Algorytm_genetyczny.genruntimeconfig.cache
+C:\Users\MATI\Desktop\Studia - sem6\Algorytm_cz1\Algorytm_genetyczny\Algorytm_genetyczny\obj\Debug\net8.0\ref\Algorytm_genetyczny.dll
