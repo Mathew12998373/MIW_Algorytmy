@@ -3,5 +3,5 @@ Skończone całe zadania to :
 2. Algorytm genetyczny GUI
 3. Algorytm_cz2
 4. Algorytm_cz2_GUI
-5. Algorytm_cz3
+5. Poprawione_Algorytm_cz3
 6. Algorytm_cz3_GUI
