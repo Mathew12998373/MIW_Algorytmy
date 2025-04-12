@@ -19,10 +19,8 @@ namespace GeneticAlgorithmGUI
             double[] daneX = new double[36];
             double[] daneY = new double[36];
 
-            // Wczytywanie danych
             Wczytanie(daneX, daneY);
 
-            // Generowanie początkowej puli
             List<string> Pula = Pula_osobnikow(liczba_osobnikow, liczba_chromosomow, liczba_parametrow);
             Dictionary<string, double> Tablica = Tablica_kodowania(Min, Max, liczba_chromosomow);
             List<(string, double, double, double)> Pula_zdekodowana = Dekodowanie(Tablica, Pula, liczba_chromosomow);

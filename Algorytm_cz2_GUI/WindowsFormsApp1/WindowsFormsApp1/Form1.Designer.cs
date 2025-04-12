@@ -15,9 +15,7 @@
             this.labelNajlepszy = new System.Windows.Forms.Label();
             this.labelSrednia = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // BtnUruchom
-            // 
+
             this.BtnUruchom.Font = new System.Drawing.Font("Arial Nova Cond", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.BtnUruchom.Location = new System.Drawing.Point(197, 14);
             this.BtnUruchom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -27,9 +25,7 @@
             this.BtnUruchom.Text = "Uruchom algorytm";
             this.BtnUruchom.UseVisualStyleBackColor = true;
             this.BtnUruchom.Click += new System.EventHandler(this.BtnUruchom_Click);
-            // 
-            // listBoxWyniki
-            // 
+
             this.listBoxWyniki.FormattingEnabled = true;
             this.listBoxWyniki.ItemHeight = 20;
             this.listBoxWyniki.Location = new System.Drawing.Point(18, 77);
@@ -37,9 +33,7 @@
             this.listBoxWyniki.Name = "listBoxWyniki";
             this.listBoxWyniki.Size = new System.Drawing.Size(523, 304);
             this.listBoxWyniki.TabIndex = 1;
-            // 
-            // labelNajlepszy
-            // 
+
             this.labelNajlepszy.AutoSize = true;
             this.labelNajlepszy.Font = new System.Drawing.Font("Arial Nova Cond", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNajlepszy.Location = new System.Drawing.Point(18, 400);
@@ -48,9 +42,7 @@
             this.labelNajlepszy.Size = new System.Drawing.Size(102, 25);
             this.labelNajlepszy.TabIndex = 2;
             this.labelNajlepszy.Text = "Najlepszy: ";
-            // 
-            // labelSrednia
-            // 
+
             this.labelSrednia.AutoSize = true;
             this.labelSrednia.Font = new System.Drawing.Font("Arial Nova Cond", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelSrednia.Location = new System.Drawing.Point(18, 446);
@@ -59,9 +51,7 @@
             this.labelSrednia.Size = new System.Drawing.Size(204, 25);
             this.labelSrednia.TabIndex = 3;
             this.labelSrednia.Text = "Średnia dostosowania: ";
-            // 
-            // MainForm
-            // 
+
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
