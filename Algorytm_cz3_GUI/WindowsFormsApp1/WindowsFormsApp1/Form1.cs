@@ -19,48 +19,52 @@ namespace XOR_Genetyczny
             int liczba_osobnikow = 13;
             int liczba_iteracji = 100;
             int liczba_parametrow = 9;
-            List<string> Pula = Pula_osobnikow(liczba_osobnikow, liczba_chromosomow, liczba_parametrow);
-            Dictionary<string, double> Tablica = Tablica_kodowania(Min, Max, liczba_chromosomow);
-            var Pula_zdekodowana = Dekodowanie(Tablica, Pula, liczba_chromosomow, liczba_parametrow);
-            var Oceny = Ocen_osobnika(Pula_zdekodowana);
-
-            var najlepszy = Najlepszy(Oceny);
+            List<string> pula = Pula_osobnikow(liczba_osobnikow, liczba_chromosomow, liczba_parametrow);
+            Dictionary<string, double> tablica = Tablica_kodowania(Min, Max, liczba_chromosomow);
+            List<(string, double[])> pula_zdekodowana = Dekodowanie(tablica, pula, liczba_chromosomow, liczba_parametrow);
+            List<(string, double)> oceny = Ocen_osobnika(pula_zdekodowana);
+            (string, double) najlepszy_osobnik = Najlepszy(oceny);
 
             for (int i = 0; i < liczba_iteracji; i++)
             {
-                var nowa_pula = Turniej(Oceny, liczba_osobnikow);
+                List<string> nowa_pula = Turniej(oceny, liczba_osobnikow);
                 Krzyzowanie(nowa_pula, liczba_chromosomow, liczba_parametrow);
                 nowa_pula = Mutacja(nowa_pula);
-
-                var Dekodowani = Dekodowanie(Tablica, nowa_pula, liczba_chromosomow, liczba_parametrow);
-                var OcenyNowe = Ocen_osobnika(Dekodowani);
-
-                OcenyNowe.Add(najlepszy);
-                najlepszy = Najlepszy(OcenyNowe);
-                Oceny = OcenyNowe;
+                List<(string, double[])> dekodowani = Dekodowanie(tablica, nowa_pula, liczba_chromosomow, liczba_parametrow);
+                List<(string, double)> oceny_now = Ocen_osobnika(dekodowani);
+                oceny_now.Add(najlepszy_osobnik);
+                najlepszy_osobnik = Najlepszy(oceny_now);
+                oceny = oceny_now;
             }
 
             listBoxWyniki.Items.Clear();
-            foreach (var osobnik in Oceny)
+            foreach (var osobnik in oceny)
             {
                 listBoxWyniki.Items.Add($"Osobnik: {osobnik.Item1}, Ocena: {osobnik.Item2}");
             }
-            labelNajlepszy.Text = $"Najlepszy: {najlepszy.Item1}, Wartość: {najlepszy.Item2}";
-            labelSrednia.Text = $"Średnia dostosowania: {Srednia(Oceny)}";
+            labelNajlepszy.Text = $"Najlepszy: {najlepszy_osobnik.Item1}, Wartość: {najlepszy_osobnik.Item2}";
+            labelSrednia.Text = $"Średnia dostosowania: {Srednia(oceny)}";
         }
 
-        private List<string> Pula_osobnikow(int liczba_osobnikow, int liczba_chromosomow, int liczba_parametrow)
+        static List<string> Pula_osobnikow(int liczba_osobnikow, int liczba_chromosomow, int liczba_parametrow)
         {
             List<string> Pula = new List<string>();
-            Random rnd = new Random();
             int L_B_CH = liczba_chromosomow * liczba_parametrow;
-
+            Random rnd = new Random();
             for (int i = 0; i < liczba_osobnikow; i++)
             {
                 string osobnik = "";
                 for (int j = 0; j < L_B_CH; j++)
                 {
-                    osobnik += rnd.Next(0, 2);
+                    int losowa = rnd.Next(0, 2);
+                    if (losowa == 1)
+                    {
+                        osobnik += '1';
+                    }
+                    else if (losowa == 0)
+                    {
+                        osobnik += '0';
+                    }
                 }
                 Pula.Add(osobnik);
             }
@@ -70,40 +74,48 @@ namespace XOR_Genetyczny
         private Dictionary<string, double> Tablica_kodowania(int Min, int Max, int liczba_chromosomow)
         {
             Dictionary<string, double> Tablica = new Dictionary<string, double>();
-            double krok = (Max - Min) / (Math.Pow(2, liczba_chromosomow) - 1);
-
-            for (int i = 0; i < Math.Pow(2, liczba_chromosomow); i++)
+            double ZD = Max - Min;
+            double krok = ZD / (Math.Pow(2, liczba_chromosomow) - 1);
+            Tablica.Add("0".PadLeft(liczba_chromosomow, '0'), Min);
+            double obecnykrok = krok;
+            for (int i = 1; i < Math.Pow(2, liczba_chromosomow) - 1; i++)
             {
                 string klucz = Convert.ToString(i, 2).PadLeft(liczba_chromosomow, '0');
-                Tablica.Add(klucz, Math.Round(Min + i * krok, 2));
+                Tablica.Add(klucz, Math.Round(obecnykrok, 2));
+                obecnykrok += krok;
+            }
+            Tablica.Add(new string('1', liczba_chromosomow), Max);
+            foreach (var i in Tablica)
+            {
+                Console.WriteLine("{0} = {1}", i.Key, i.Value);
             }
             return Tablica;
         }
 
-        private List<(string, double[])> Dekodowanie(Dictionary<string, double> Tablica, List<string> Pula, int liczba_chromosomow, int liczba_parametrow)
+        private List<(string, double[])> Dekodowanie(Dictionary<string, double> tablica, List<string> pula, int liczba_chromosomow, int liczba_parametrow)
         {
-            List<(string, double[])> Zdekodowani = new List<(string, double[])>();
-
-            foreach (var osobnik in Pula)
+            List<(string, double[])> zdekodowane = new List<(string, double[])>();
+            foreach (var osobnik in pula)
             {
                 double[] wagi = new double[liczba_parametrow];
                 for (int i = 0; i < liczba_parametrow; i++)
                 {
                     string bin = osobnik.Substring(i * liczba_chromosomow, liczba_chromosomow);
-                    wagi[i] = Tablica[bin];
+                    wagi[i] = tablica[bin];
                 }
-                Zdekodowani.Add((osobnik, wagi));
+                zdekodowane.Add((osobnik, wagi));
             }
-            return Zdekodowani;
+            return zdekodowane;
         }
 
         private double Funkcja_przystosowania(double[] wagi)
         {
-            double[][] wejscia = {
-                new double[] { 0, 0, 1 },
-                new double[] { 0, 1, 1 },
-                new double[] { 1, 0, 1 },
-                new double[] { 1, 1, 1 }
+            double[][] wejscia = new double[4][]
+            {
+                new double[] {0, 0, 1},
+                new double[] {0, 1, 1},
+                new double[] {1, 0, 1},
+                new double[] {1, 1, 1}
             };
             double[] oczekiwane = { 0, 1, 1, 0 };
             double blad = 0.0;
@@ -112,16 +124,12 @@ namespace XOR_Genetyczny
             {
                 double suma1 = 0.0;
                 for (int j = 0; j < 3; j++)
-                {
                     suma1 += wejscia[i][j] * wagi[j];
-                }
                 double neuron1 = 1.0 / (1.0 + Math.Exp(-suma1));
 
                 double suma2 = 0.0;
                 for (int j = 0; j < 3; j++)
-                {
                     suma2 += wejscia[i][j] * wagi[j + 3];
-                }
                 double neuron2 = 1.0 / (1.0 + Math.Exp(-suma2));
 
                 double sumaOut = neuron1 * wagi[6] + neuron2 * wagi[7] + wagi[8];
@@ -134,83 +142,97 @@ namespace XOR_Genetyczny
 
         private List<(string, double)> Ocen_osobnika(List<(string, double[])> Pula)
         {
-            List<(string, double)> Oceny = new List<(string, double)>();
+            List<(string, double)> osobnicy = new List<(string, double)>();
             foreach (var osobnik in Pula)
             {
-                double blad = Funkcja_przystosowania(osobnik.Item2);
-                Oceny.Add((osobnik.Item1, blad));
+                osobnicy.Add((osobnik.Item1, Funkcja_przystosowania(osobnik.Item2)));
             }
-            return Oceny;
+            return osobnicy;
         }
 
-        private List<string> Turniej(List<(string, double)> Pula, int liczba_osobnikow)
+        private List<string> Turniej(List<(string, double)> pula, int liczba_osobnikow)
         {
-            List<string> NowaPula = new List<string>();
+            List<string> nowa_pula = new List<string>();
             Random rnd = new Random();
 
             for (int i = 0; i < liczba_osobnikow; i++)
             {
-                var o1 = Pula[rnd.Next(Pula.Count)];
-                var o2 = Pula[rnd.Next(Pula.Count)];
-                var o3 = Pula[rnd.Next(Pula.Count)];
+                var o1 = pula[rnd.Next(pula.Count)];
+                var o2 = pula[rnd.Next(pula.Count)];
+                var o3 = pula[rnd.Next(pula.Count)];
 
-                var najlepszy = o1.Item2 <= o2.Item2 && o1.Item2 <= o3.Item2 ? o1 :
-                                o2.Item2 <= o1.Item2 && o2.Item2 <= o3.Item2 ? o2 : o3;
+                var najlepszy = (string.Empty, double.MaxValue);
 
-                NowaPula.Add(najlepszy.Item1);
-            }
-            return NowaPula;
-        }
-
-        private void Krzyzowanie(List<string> Pula, int liczba_chromosomow, int liczba_parametrow)
-        {
-            Random rnd = new Random();
-
-            for (int i = 0; i < Pula.Count - 1; i += 2)
-            {
-                int punkt = rnd.Next(1, liczba_chromosomow * liczba_parametrow - 1);
-                string r1 = Pula[i];
-                string r2 = Pula[i + 1];
-
-                Pula[i] = r1.Substring(0, punkt) + r2.Substring(punkt);
-                Pula[i + 1] = r2.Substring(0, punkt) + r1.Substring(punkt);
-            }
-        }
-
-        private List<string> Mutacja(List<string> Pula)
-        {
-            Random rnd = new Random();
-
-            for (int i = 4; i < Pula.Count; i++)
-            {
-                int indeks = rnd.Next(Pula[i].Length);
-                char[] geny = Pula[i].ToCharArray();
-                geny[indeks] = geny[indeks] == '0' ? '1' : '0';
-                Pula[i] = new string(geny);
-            }
-            return Pula;
-        }
-
-        private (string, double) Najlepszy(List<(string, double)> Pula)
-        {
-            (string, double) najlepszy = Pula[0]; 
-            foreach (var osobnik in Pula)
-            {
-                if (osobnik.Item2 < najlepszy.Item2) 
+                if (o1.Item2 <= o2.Item2 && o1.Item2 <= o3.Item2)
                 {
-                    najlepszy = osobnik;
+                    najlepszy = o1;
                 }
+                else if (o2.Item2 <= o1.Item2 && o2.Item2 <= o3.Item2)
+                {
+                    najlepszy = o2;
+                }
+                else
+                {
+                    najlepszy = o3;
+                }
+
+                nowa_pula.Add(najlepszy.Item1);
             }
-            return najlepszy; 
+            return nowa_pula;
         }
-        private double Srednia(List<(string, double)> Pula)
+
+        private void Krzyzowanie(List<string> pula, int chrom_len, int param_count)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < pula.Count - 1; i += 2)
+            {
+                int punkt = rnd.Next(1, chrom_len * param_count - 1);
+                string r1 = pula[i];
+                string r2 = pula[i + 1];
+                string d1 = r1.Substring(0, punkt) + r2.Substring(punkt);
+                string d2 = r2.Substring(0, punkt) + r1.Substring(punkt);
+                pula[i] = d1;
+                pula[i + 1] = d2;
+            }
+        }
+
+        private List<string> Mutacja(List<string> pula)
+        {
+            Random rnd = new Random();
+            for (int i = 4; i < pula.Count; i++)
+            {
+                int index = rnd.Next(pula[i].Length);
+                char[] geny = pula[i].ToCharArray();
+                if (geny[index] == '0')
+                {
+                    geny[index] = '1';
+                }
+                else
+                {
+                    geny[index] = '0';
+                }
+                pula[i] = new string(geny);
+            }
+            return pula;
+        }
+
+        private (string, double) Najlepszy(List<(string, double)> pula)
+        {
+            (string, double) najlepszy = pula[0];
+            foreach (var i in pula)
+            {
+                if (i.Item2 < najlepszy.Item2)
+                    najlepszy = i;
+            }
+            return najlepszy;
+        }
+
+        private double Srednia(List<(string, double)> pula)
         {
             double suma = 0;
-            foreach (var osobnik in Pula)
-            {
-                suma += osobnik.Item2; 
-            }
-            return Math.Round(suma / Pula.Count, 4); 
+            foreach (var i in pula)
+                suma += i.Item2;
+            return Math.Round(suma / pula.Count, 4);
         }
 
     }

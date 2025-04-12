@@ -15,9 +15,8 @@
             this.labelNajlepszy = new System.Windows.Forms.Label();
             this.labelSrednia = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // BtnUruchom
-            // 
+            
+            // Uruchomienie algorytmu
             this.BtnUruchom.Font = new System.Drawing.Font("Arial Nova Cond", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.BtnUruchom.Location = new System.Drawing.Point(197, 21);
             this.BtnUruchom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -27,9 +26,7 @@
             this.BtnUruchom.Text = "Uruchom algorytm";
             this.BtnUruchom.UseVisualStyleBackColor = true;
             this.BtnUruchom.Click += new System.EventHandler(this.BtnUruchom_Click);
-            // 
-            // listBoxWyniki
-            // 
+            // Wyświetlenie wynikow w tabeli
             this.listBoxWyniki.FormattingEnabled = true;
             this.listBoxWyniki.ItemHeight = 20;
             this.listBoxWyniki.Location = new System.Drawing.Point(18, 77);
@@ -37,9 +34,7 @@
             this.listBoxWyniki.Name = "listBoxWyniki";
             this.listBoxWyniki.Size = new System.Drawing.Size(538, 304);
             this.listBoxWyniki.TabIndex = 1;
-            // 
-            // labelNajlepszy
-            // 
+            // wyświetlenie najlepszego osobnika
             this.labelNajlepszy.AutoSize = true;
             this.labelNajlepszy.Location = new System.Drawing.Point(18, 400);
             this.labelNajlepszy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -47,9 +42,7 @@
             this.labelNajlepszy.Size = new System.Drawing.Size(84, 20);
             this.labelNajlepszy.TabIndex = 2;
             this.labelNajlepszy.Text = "Najlepszy: ";
-            // 
-            // labelSrednia
-            // 
+            // wyświetlenie średniej
             this.labelSrednia.AutoSize = true;
             this.labelSrednia.Location = new System.Drawing.Point(18, 446);
             this.labelSrednia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -57,9 +50,7 @@
             this.labelSrednia.Size = new System.Drawing.Size(174, 20);
             this.labelSrednia.TabIndex = 3;
             this.labelSrednia.Text = "Średnia dostosowania: ";
-            // 
-            // MainForm
-            // 
+            
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
