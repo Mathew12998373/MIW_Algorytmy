@@ -48,6 +48,26 @@ class SiecNeuronowa
         }
         return (Wagi, Bias);
     }
+    static List<double> Propagacja((List<List<List<double>>> Wagi, List<List<double>> Bias) GenerowanieWag, List<double> wejscia, int Beta)
+    {
+        foreach (var warstwa in GenerowanieWag.Wagi)
+        {
+            List<double> noweWyjscia = new List<double>();
+
+            for (int i = 0; i < warstwa.Count; i++)
+            {
+                double suma = GenerowanieWag.Bias[GenerowanieWag.Wagi.IndexOf(warstwa)][i];
+                for (int j = 0; j < wejscia.Count; j++)
+                {
+                    suma += wejscia[j] * warstwa[i][j];
+                }
+                noweWyjscia.Add(Funkcja(suma, Beta));
+            }
+
+            wejscia = noweWyjscia;
+        }
+        return wejscia;
+    }
 
     static void Sieci(List<(int, int, int)> probki, (List<List<List<double>>> Wagi, List<List<double>> Bias) GenerowanieWag, int Beta, double Współczynnik, int liczbaEpok)
     {
@@ -108,26 +128,7 @@ class SiecNeuronowa
             }
         }
     }
-    static List<double> Propagacja((List<List<List<double>>> Wagi, List<List<double>> Bias) GenerowanieWag, List<double> wejscia, int Beta)
-    {
-        foreach (var warstwa in GenerowanieWag.Wagi)
-        {
-            List<double> noweWyjscia = new List<double>();
-
-            for (int i = 0; i < warstwa.Count; i++)
-            {
-                double suma = GenerowanieWag.Bias[GenerowanieWag.Wagi.IndexOf(warstwa)][i];
-                for (int j = 0; j < wejscia.Count; j++)
-                {
-                    suma += wejscia[j] * warstwa[i][j];
-                }
-                noweWyjscia.Add(Funkcja(suma, Beta));
-            }
-
-            wejscia = noweWyjscia;
-        }
-        return wejscia;
-    }
+    
 
     static void TestowanieSieci(List<(int, int, int)> probki, (List<List<List<double>>> Wagi, List<List<double>> Bias) GenerowanieWag, int Beta)
     {
