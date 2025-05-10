@@ -1,0 +1,10 @@
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie3\GUI_zadanie3\bin\Debug\GUI_zadanie3.exe.config
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie3\GUI_zadanie3\bin\Debug\GUI_zadanie3.exe
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie3\GUI_zadanie3\bin\Debug\GUI_zadanie3.pdb
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie3\GUI_zadanie3\obj\Debug\GUI_zadanie3.csproj.AssemblyReference.cache
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie3\GUI_zadanie3\obj\Debug\SiecNeuronowaGUI.Form1.resources
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie3\GUI_zadanie3\obj\Debug\GUI_zadanie3.Properties.Resources.resources
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie3\GUI_zadanie3\obj\Debug\GUI_zadanie3.csproj.GenerateResource.cache
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie3\GUI_zadanie3\obj\Debug\GUI_zadanie3.csproj.CoreCompileInputs.cache
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie3\GUI_zadanie3\obj\Debug\GUI_zadanie3.exe
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie3\GUI_zadanie3\obj\Debug\GUI_zadanie3.pdb
