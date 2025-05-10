@@ -1,0 +1,17 @@
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\bin\Debug\net8.0-windows\GUI_zadanie1.exe
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\bin\Debug\net8.0-windows\GUI_zadanie1.deps.json
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\bin\Debug\net8.0-windows\GUI_zadanie1.runtimeconfig.json
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\bin\Debug\net8.0-windows\GUI_zadanie1.dll
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\bin\Debug\net8.0-windows\GUI_zadanie1.pdb
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\obj\Debug\net8.0-windows\GUI_zadanie1.csproj.GenerateResource.cache
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\obj\Debug\net8.0-windows\GUI_zadanie1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\obj\Debug\net8.0-windows\GUI_zadanie1.AssemblyInfoInputs.cache
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\obj\Debug\net8.0-windows\GUI_zadanie1.AssemblyInfo.cs
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\obj\Debug\net8.0-windows\GUI_zadanie1.csproj.CoreCompileInputs.cache
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\obj\Debug\net8.0-windows\GUI_zadanie1.dll
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\obj\Debug\net8.0-windows\refint\GUI_zadanie1.dll
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\obj\Debug\net8.0-windows\GUI_zadanie1.pdb
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\obj\Debug\net8.0-windows\GUI_zadanie1.genruntimeconfig.cache
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\obj\Debug\net8.0-windows\ref\GUI_zadanie1.dll
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\obj\Debug\net8.0-windows\SiecNeuronowaGUI.Form1.resources
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\GUI_zadanie1\GUI_zadanie1\obj\Debug\net8.0-windows\GUI_zadanie1.Properties.Resources.resources
