@@ -5,17 +5,17 @@ class SiecNeuronowa
 {
     static List<(int neurony, int wejscia)> LiczbaNeuronow()
     {
-        var Warstwa = new List<(int, int)>
+        List<(int, int)> Liczba_neuronów = new List<(int, int)>
         {
             (2, 2),
             (1, 2)
         };
-        foreach (var i in Warstwa)
+        foreach (var i in Liczba_neuronów)
         {
             Console.WriteLine("Warstwa : {0} , wejścia = {1}", i.Item1, i.Item2);
         }
 
-        return Warstwa;
+        return Liczba_neuronów;
     }
     static double Funkcja(double x, int beta)
     {
