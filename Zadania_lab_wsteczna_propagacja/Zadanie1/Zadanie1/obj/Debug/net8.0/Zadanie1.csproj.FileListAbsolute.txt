@@ -1,0 +1,14 @@
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\Zadanie1\Zadanie1\bin\Debug\net8.0\Zadanie1.exe
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\Zadanie1\Zadanie1\bin\Debug\net8.0\Zadanie1.deps.json
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\Zadanie1\Zadanie1\bin\Debug\net8.0\Zadanie1.runtimeconfig.json
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\Zadanie1\Zadanie1\bin\Debug\net8.0\Zadanie1.dll
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\Zadanie1\Zadanie1\bin\Debug\net8.0\Zadanie1.pdb
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\Zadanie1\Zadanie1\obj\Debug\net8.0\Zadanie1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\Zadanie1\Zadanie1\obj\Debug\net8.0\Zadanie1.AssemblyInfoInputs.cache
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\Zadanie1\Zadanie1\obj\Debug\net8.0\Zadanie1.AssemblyInfo.cs
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\Zadanie1\Zadanie1\obj\Debug\net8.0\Zadanie1.csproj.CoreCompileInputs.cache
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\Zadanie1\Zadanie1\obj\Debug\net8.0\Zadanie1.dll
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\Zadanie1\Zadanie1\obj\Debug\net8.0\refint\Zadanie1.dll
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\Zadanie1\Zadanie1\obj\Debug\net8.0\Zadanie1.pdb
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\Zadanie1\Zadanie1\obj\Debug\net8.0\Zadanie1.genruntimeconfig.cache
+C:\Users\MATI\Desktop\Studia - sem6\Zadanie1_P2\MIW_Zadanie_1_P2\Zadanie1\Zadanie1\obj\Debug\net8.0\ref\Zadanie1.dll
