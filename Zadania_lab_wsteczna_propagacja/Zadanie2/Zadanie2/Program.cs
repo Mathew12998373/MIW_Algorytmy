@@ -50,7 +50,7 @@ class Zadanie2
 
         for (int l = 0; l < Wagi.Count; l++)
         {
-            var next = new List<double>();
+            List<double> kolejne = new List<double>();
             for (int n = 0; n < Wagi[l].Count; n++)
             {
                 double suma = Bias[l][n];
@@ -58,10 +58,10 @@ class Zadanie2
                 {
                     suma += do_wejsc[i] * Wagi[l][n][i];
                 }
-                next.Add(Funkcja(suma, beta));
+                kolejne.Add(Funkcja(suma, beta));
             }
-            wyjscia.Add(next);
-            do_wejsc = next;
+            wyjscia.Add(kolejne);
+            do_wejsc = kolejne;
         }
         return wyjscia;
     }
