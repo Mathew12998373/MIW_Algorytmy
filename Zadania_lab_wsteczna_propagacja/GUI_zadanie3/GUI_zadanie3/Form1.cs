@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace SiecNeuronowaGUI
+namespace Zadanie3
 {
     public partial class Form1 : Form
     {
