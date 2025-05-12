@@ -63,7 +63,7 @@ namespace SiecNeuronowaGUI
         {
             List<List<List<double>>> Wagi = new List<List<List<double>>>();
             List<List<double>> Bias = new List<List<double>>();
-            var rnd = new Random();
+            Random rnd = new Random();
 
             foreach (var (neurony, wejścia) in liczbaNeuronow)
             {
@@ -170,6 +170,6 @@ namespace SiecNeuronowaGUI
             }
         }
 
-        
+
     }
 }
