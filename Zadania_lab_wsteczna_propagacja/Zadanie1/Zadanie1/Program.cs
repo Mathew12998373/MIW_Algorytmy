@@ -10,22 +10,17 @@ class SiecNeuronowa
             (2, 2),
             (1, 2)
         };
-        foreach (var i in Liczba_neuronów)
-        {
-            Console.WriteLine("Warstwa : {0} , wejścia = {1}", i.Item1, i.Item2);
-        }
-
         return Liczba_neuronów;
     }
     static double Funkcja(double x, int beta)
     {
         return 1.0 / (1.0 + Math.Exp(-beta * x));
     }
-    static (List<List<List<double>>> Wagi, List<List<double>> Bias) GenerowanieWag(List<(int neurony, int wejscia)> liczbaNeuronow)
+    static (List<List<List<double>>> Wagi, List<List<double>> Bias) GenerowanieWag (List<(int neurony, int wejscia)> liczbaNeuronow)
     {
         List<List<List<double>>> Wagi = new List<List<List<double>>>();
         List<List<double>> Bias = new List<List<double>>();
-        var rnd = new Random();
+        Random rnd = new Random();
 
         foreach (var (neurony, wejścia) in liczbaNeuronow)
         {
@@ -68,9 +63,9 @@ class SiecNeuronowa
         }
         return wyjscia;
     }
-    static void Sieci(List<(int x1, int x2, int y)> probki, (List<List<List<double>>> Wagi, List<List<double>> Bias) siec, int beta, double wspolczynnik, int liczbaEpok)
+    static void Sieci(List<(int x1, int x2, int y)> probki, (List<List<List<double>>> Wagi, List<List<double>> Bias) GenerowanieWag, int beta, double wspolczynnik, int liczbaEpok)
     {
-        int Liczba_warstw = siec.Wagi.Count;
+        int Liczba_warstw = GenerowanieWag.Wagi.Count;
 
         for (int epoka = 0; epoka < liczbaEpok; epoka++)
         {
@@ -84,12 +79,12 @@ class SiecNeuronowa
                 for (int l = 0; l < Liczba_warstw; l++)
                 {
                     List<double> Wyjscie_L = new List<double>();
-                    for (int n = 0; n < siec.Wagi[l].Count; n++)
+                    for (int n = 0; n < GenerowanieWag.Wagi[l].Count; n++)
                     {
-                        double suma = siec.Bias[l][n];
+                        double suma = GenerowanieWag.Bias[l][n];
                         for (int i = 0; i < aktualne.Count; i++)
                         {
-                            suma += aktualne[i] * siec.Wagi[l][n][i];
+                            suma += aktualne[i] * GenerowanieWag.Wagi[l][n][i];
                         }
                         Wyjscie_L.Add(Funkcja(suma, beta));
                     }
@@ -101,27 +96,26 @@ class SiecNeuronowa
                 sumarycznyBlad += Math.Abs(blad);
                 var D = new List<double>[Liczba_warstw];
                 for (int i = 0; i < Liczba_warstw; i++)
-                    D[i] = new List<double>(new double[siec.Wagi[i].Count]);
+                {
+                    D[i] = new List<double>(new double[GenerowanieWag.Wagi[i].Count]);
+                }
 
                 int ostatnia = Liczba_warstw - 1;
-                for (int j = 0; j < siec.Wagi[ostatnia].Count; j++)
+                for (int j = 0; j < GenerowanieWag.Wagi[ostatnia].Count; j++)
                 {
-                    double o = wyjsciaWarstw[ostatnia][j];
-                    D[ostatnia][j] = blad * beta * o * (1 - o);
+                    D[ostatnia][j] = blad * beta * wyjsciaWarstw[ostatnia][j] * (1 - wyjsciaWarstw[ostatnia][j]);
                 }
 
                 for (int l = Liczba_warstw - 2; l >= 0; l--)
                 {
-                    for (int i = 0; i < siec.Wagi[l].Count; i++)
+                    for (int i = 0; i < GenerowanieWag.Wagi[l].Count; i++)
                     {
                         double Suma = 0.0;
-                        for (int k = 0; k < siec.Wagi[l + 1].Count; k++)
+                        for (int k = 0; k < GenerowanieWag.Wagi[l + 1].Count; k++)
                         {
-                            Suma += siec.Wagi[l + 1][k][i] * D[l + 1][k];
+                            Suma += GenerowanieWag.Wagi[l + 1][k][i] * D[l + 1][k];
                         }
-
-                        double o = wyjsciaWarstw[l][i];
-                        D[l][i] = Suma * beta * o * (1 - o);
+                        D[l][i] = Suma * beta * wyjsciaWarstw[l][i] * (1 - wyjsciaWarstw[l][i]);
                     }
                 }
                 for (int l = 0; l < Liczba_warstw; l++)
@@ -132,13 +126,13 @@ class SiecNeuronowa
                     else
                         poprzednie_wyjscie = wyjsciaWarstw[l - 1];
 
-                    for (int n = 0; n < siec.Wagi[l].Count; n++)
+                    for (int n = 0; n < GenerowanieWag.Wagi[l].Count; n++)
                     {
                         for (int i = 0; i < poprzednie_wyjscie.Count; i++)
                         {
-                            siec.Wagi[l][n][i] += wspolczynnik * D[l][n] * poprzednie_wyjscie[i];
+                            GenerowanieWag.Wagi[l][n][i] += wspolczynnik * D[l][n] * poprzednie_wyjscie[i];
                         }
-                        siec.Bias[l][n] += wspolczynnik * D[l][n];
+                        GenerowanieWag.Bias[l][n] += wspolczynnik * D[l][n];
                     }
                 }
             }
@@ -150,11 +144,11 @@ class SiecNeuronowa
             }
         }
     }
-    static void TestowanieSieci(List<(int x1, int x2, int y)> probki, (List<List<List<double>>> Wagi, List<List<double>> Bias) siec, int beta)
+    static void TestowanieSieci(List<(int x1, int x2, int y)> probki, (List<List<List<double>>> Wagi, List<List<double>> Bias) GenerowanieWag, int beta)
     {
         foreach (var (x1, x2, y) in probki)
         {
-            var output = Propagacja(siec, new List<double> { x1, x2 }, beta);
+            var output = Propagacja(GenerowanieWag, new List<double> {x1, x2 }, beta);
             Wyswietlenie(x1, x2, y, output[0]);
         }
     }
