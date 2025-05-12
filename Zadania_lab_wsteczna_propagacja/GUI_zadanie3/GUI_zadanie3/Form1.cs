@@ -10,7 +10,7 @@ namespace Zadanie3
         private List<(int x1, int x2, int x3, int suma, int wyjscie)> probki;
         private int beta = 1;
         private double współczynnik = 0.5;
-        private int liczbaEpok = 20000;
+        private int liczbaEpok = 19000;
 
         public Form1()
         {
@@ -45,7 +45,7 @@ namespace Zadanie3
                 var output = Propagacja(Generowanie_wag.Wagi, Generowanie_wag.Bias, new List<double> { x1, x2, x3 }, beta);
                 var koniec = output[output.Count - 1];
 
-                wyniki += $"Wejście: {x1} : {x2} : {x3} \t wyjscie1: {Suma_ostatni} wyjscie2: {wyjscie_ostatni} \t pożądana wartość wyjściowa1: {koniec[0]:F2} , pożądana wartość wyjściowa2 {koniec[1]:F2}\n";
+                wyniki += $"Wejście: {x1} : {x2} : {x3} \t\n wyjscie1: {Suma_ostatni} wyjscie2: {wyjscie_ostatni} \t\n pożądana wartość wyjściowa1: {koniec[0]:F2} , pożądana wartość wyjściowa2 {koniec[1]:F2}\n";
             }
 
             outputBox.Text = wyniki;
@@ -59,7 +59,7 @@ namespace Zadanie3
         {
             List<List<List<double>>> Wagi = new List<List<List<double>>>();
             List<List<double>> Bias = new List<List<double>>();
-            var rnd = new Random();
+            Random rnd = new Random();
 
             foreach (var (neurony, wejścia) in LiczbaNeuronow)
             {
@@ -125,9 +125,8 @@ namespace Zadanie3
                     int ostatni_element = Liczba_warstw;
                     for (int n = 0; n < wyjscia[ostatni_element].Count; n++)
                     {
-                        double a1 = wyjscia[ostatni_element][n];
-                        double a2 = koniec[n] - a1;
-                        D[ostatni_element][n] = a2 * beta * a1 * (1 - a1);
+                        double a2 = koniec[n] - wyjscia[ostatni_element][n];
+                        D[ostatni_element][n] = a2 * beta * wyjscia[ostatni_element][n] * (1 - wyjscia[ostatni_element][n]);
                         if (n == 0)
                         {
                             sumarycznyBlad1 += Math.Abs(a2);
@@ -165,7 +164,7 @@ namespace Zadanie3
                         }
                     }
                 }
-                if (sumarycznyBlad1 < 0.01 && sumarycznyBlad2 < 0.01)
+                if (sumarycznyBlad1 < 0.4 && sumarycznyBlad2 < 0.4)
                 {
                     break;
                 }
