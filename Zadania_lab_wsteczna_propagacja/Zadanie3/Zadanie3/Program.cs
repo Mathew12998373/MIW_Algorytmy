@@ -19,11 +19,11 @@ class Zadanie3
         return 1.0 / (1.0 + Math.Exp(-beta * x));
     }
 
-    static (List<List<List<double>>> Wagi, List<List<double>> Bias) GenerowanieWag(List<(int neurony, int wejscia)> LiczbaNeuronow)
+    static (List<List<List<double>>> Wagi, List<List<double>> Bias) GenerowanieWag (List<(int neurony, int wejscia)> LiczbaNeuronow)
     {
         List<List<List<double>>> Wagi = new List<List<List<double>>>();
         List<List<double>> Bias = new List<List<double>>();
-        var rnd = new Random();
+        Random rnd = new Random();
 
         foreach (var (neurony, wejścia) in LiczbaNeuronow)
         {
@@ -89,9 +89,8 @@ class Zadanie3
                 int ostatni_element = Liczba_warstw;
                 for (int n = 0; n < wyjscia[ostatni_element].Count; n++)
                 {
-                    double a1 = wyjscia[ostatni_element][n];
-                    double a2 = koniec[n] - a1;
-                    D[ostatni_element][n] = a2 * beta * a1 * (1 - a1);
+                    double a2 = koniec[n] - wyjscia[ostatni_element][n];
+                    D[ostatni_element][n] = a2 * beta * wyjscia[ostatni_element][n] * (1 - wyjscia[ostatni_element][n]);
                     if (n == 0)
                     {
                         sumarycznyBlad1 += Math.Abs(a2);
@@ -129,8 +128,8 @@ class Zadanie3
                     }
                 }
             }
-            Wyswietlenie(epoka + 1);
-            if (sumarycznyBlad1 < 0.01 && sumarycznyBlad2 < 0.01)
+            Wyswietlenie(epoka + 1, sumarycznyBlad1, sumarycznyBlad2);
+            if (sumarycznyBlad1 < 0.4 && sumarycznyBlad2 < 0.4)
             {
                 break;
             }
@@ -152,16 +151,16 @@ class Zadanie3
     {
         Console.WriteLine("Wejście: {0} : {1} : {2}  wyjscie1: {3}  wyjscie2: {4}", wejscie1, wejscie2, wejscie3, Suma_ostatni, wyjscie_ostatni);
     }
-    static void Wyswietlenie(int epoka)
+    static void Wyswietlenie(int epoka, double błąd1, double błąd2)
     {
-        Console.WriteLine("Epoka: {0}", epoka + 1);
+        Console.WriteLine("Epoka: {0}  :  błąd1: {1:F2}    Błąd2: {2:F2}", epoka + 1, błąd1, błąd2);
     }
 
     static void Main()
     {
         int beta = 1;
         double współczynnik = 0.5;
-        int liczbaEpok = 20000;
+        int liczbaEpok = 19000;
         var probki = new List<(int, int, int, int, int)>
         {
             (0,0,0, 0,0),
@@ -176,7 +175,6 @@ class Zadanie3
 
         var liczbaNeuronow = LiczbaNeuronow();
         var (Wagi, Bias) = GenerowanieWag(liczbaNeuronow);
-        Console.WriteLine("Sieci: ");
         Sieci(probki, Wagi, Bias, beta, współczynnik, liczbaEpok);
         TestowanieSieci(probki, Wagi, Bias, beta);
     }
