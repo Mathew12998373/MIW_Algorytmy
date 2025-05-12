@@ -21,7 +21,7 @@ class Zadanie2
     {
         List<List<List<double>>> Wagi = new List<List<List<double>>>();
         List<List<double>> Bias = new List<List<double>>();
-        var rnd = new Random();
+        Random rnd = new Random();
 
         foreach (var (neurony, wejścia) in liczbaNeuronow)
         {
@@ -166,7 +166,6 @@ class Zadanie2
 
         var liczbaNeuronow = LiczbaNeuronow();
         var (Wagi, Bias) = GenerowanieWag(liczbaNeuronow);
-
         Sieci(probki, Wagi, Bias, beta, współczynnik, liczbaEpok);
         TestowanieSieci(probki, Wagi, Bias, beta);
     }
