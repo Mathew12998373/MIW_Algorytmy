@@ -5,3 +5,6 @@ Skończone całe zadania to :
 4. Algorytm_cz2_GUI
 5. Poprawione_Algorytm_cz3
 6. Algorytm_cz3_GUI
+7. Zadania_lab_wsteczna_propagacja
+8. Klasyfikator_k-nn
+9. GUI_Klasyfikator_k-nn
