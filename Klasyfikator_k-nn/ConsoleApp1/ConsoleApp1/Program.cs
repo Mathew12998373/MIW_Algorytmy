@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 
 class Zadanie1
 {
@@ -9,7 +10,10 @@ class Zadanie1
     {
         double s = 0;
         for (int i = 0; i < a.Length; i++)
+        {
             s += (a[i] - b[i]) * (a[i] - b[i]);
+        }
+
         return Math.Sqrt(s);
     }
 
@@ -23,6 +27,7 @@ class Zadanie1
         }
         return m;
     }
+
     static (double[] min, double[] max) Znajdź_Min_i_Maks(List<(double[] cechy, string kategoria)> dane)
     {
         double[] min = (double[])dane[0].cechy.Clone();
@@ -34,9 +39,15 @@ class Zadanie1
             for (int j = 0; j < c.Length; j++)
             {
                 if (c[j] < min[j])
+                {
                     min[j] = c[j];
+                }
+
                 if (c[j] > max[j])
+                {
                     max[j] = c[j];
+                }
+
             }
         }
 
@@ -153,6 +164,50 @@ class Zadanie1
             return najlepszaKat;
         }
     }
+
+    static double Dokładność_Klasyfikacji(List<(double[] cechy, string kategoria)> dane, int k, Func<double[], double[], double> metryka)
+    {
+        int poprawne = 0;
+        int wszystkie = dane.Count;
+        var (min, max) = Znajdź_Min_i_Maks(dane);
+
+        for (int i = 0; i < wszystkie; i++)
+        {
+            var testowa = dane[i];
+            var uczące = new List<(double[] cechy, string kategoria)>();
+
+            for (int j = 0; j < wszystkie; j++)
+            {
+                if (j != i)
+                {
+                    uczące.Add(((double[])dane[j].cechy.Clone(), dane[j].kategoria));
+                }
+                    
+            }
+
+            var tylkoCechyUczące = new List<double[]>();
+            for (int j = 0; j < uczące.Count; j++)
+            {
+                tylkoCechyUczące.Add(uczące[j].cechy);
+            }
+
+            Normalizuj(tylkoCechyUczące, min, max);
+
+            double[] cechyTest = (double[])testowa.cechy.Clone();
+            Normalizuj(new List<double[]> { cechyTest }, min, max);
+
+            string wynik = Klasyfikuj(uczące, cechyTest, k, metryka);
+
+            if (wynik == testowa.kategoria)
+            {
+                poprawne += 1;
+            }
+
+        }
+
+        return 100.0 * poprawne / wszystkie;
+    }
+
     static void Main(string[] args)
     {
         int k = 3;
@@ -185,8 +240,13 @@ class Zadanie1
         string wynik_Euklides = Klasyfikuj(próbki, próba, k, Euklides);
         string wynik_Czebyszew = Klasyfikuj(próbki, próba, k, odległość_czybyszewa);
 
-        Console.WriteLine("Euklides\tklasa: {0}", wynik_Euklides);
-        Console.WriteLine("Odległość czebyszew\tklasa: {0}", wynik_Czebyszew);
+        Console.WriteLine("Dla Euklidesa   klasa: {0}", wynik_Euklides);
+        Console.WriteLine("Dla odległości czebyszewa   klasa: {0}", wynik_Czebyszew);
 
+        double dokładność_Euklides = Dokładność_Klasyfikacji(próbki, k, Euklides);
+        double dokładność_Czebyszew = Dokładność_Klasyfikacji(próbki, k, odległość_czybyszewa);
+
+        Console.WriteLine("Dokładność klasyfikacji dla Euklidesa : {0:F2}%", dokładność_Euklides);
+        Console.WriteLine("Dokładność klasyfikacji dla Czebyszewa: {0:F2}%", dokładność_Czebyszew);
     }
 }
